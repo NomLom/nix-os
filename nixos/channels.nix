@@ -1,11 +1,9 @@
- {
+{
   pkgs,
   lib,
-
   ...
-}:{
-
-nix.settings = {
+}: {
+  nix.settings = {
     trusted-users = ["leon"];
     substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
@@ -15,5 +13,4 @@ nix.settings = {
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
   };
-
 }

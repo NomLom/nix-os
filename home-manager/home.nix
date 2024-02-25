@@ -55,7 +55,24 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-   home.packages = with pkgs; [ tree ];
+  home.packages = with pkgs; [
+    tree
+    firefox
+    kate
+    chromium
+    github-desktop
+    fish
+    steam
+    gparted
+    mplayer
+    kmplayer
+    discord
+] ++ (with pkgs.unstable; [
+  #warp-terminal
+  # any other unstable packages you wish to include
+]);
+
+
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

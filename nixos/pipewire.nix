@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:{
-
+}: {
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -15,5 +14,4 @@
     pulse.enable = true;
     #jack.enable = true; # If you want to use JACK applications, uncomment this
   };
-
 }

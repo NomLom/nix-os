@@ -56,7 +56,6 @@
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
 
-
     # Enable networking
     networking.networkmanager.enable = true;
     # NixOS configuration entrypoint

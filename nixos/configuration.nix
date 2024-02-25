@@ -25,7 +25,7 @@
     ./steam.nix
     ./fonts.nix
     ./plasma.nix
-    ../pkgs/satpaper.nix
+    #../pkgs/satpaper.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./nvidia.nix
@@ -71,6 +71,7 @@
     gst_all_1.gst-plugins-bad
     gst_all_1.gst-libav
     ffmpeg
+
     # Additional packages previously defined are merged here
   ];
 
