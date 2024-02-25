@@ -22,13 +22,13 @@
     ./international.nix
     ./garbage.nix
     ./channels.nix
-    ./steam
+    ./steam.nix
     ./fonts.nix
     ./plasma.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./nvidia.nix
-    ./pipewire
+    ./pipewire.nix
   ];
 
   nixpkgs = {
@@ -55,6 +55,26 @@
       allowUnfree = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    git
+    curl
+    gvfs
+    xfce.thunar
+    kde-gtk-config
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-libav
+    ffmpeg
+    # Additional packages previously defined are merged here
+  ];
+
+  # Enable networking
+  networking.networkmanager.enable = true;
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
