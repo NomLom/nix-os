@@ -25,6 +25,7 @@
     ./steam.nix
     ./fonts.nix
     ./plasma.nix
+    ../pkgs/satpaper.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./nvidia.nix
