@@ -2,8 +2,8 @@
 {
   stdenv,
   fetchurl,
-  lib,
-  ...
+  lib
+
 }:
 stdenv.mkDerivation rec {
   pname = "satpaper";
