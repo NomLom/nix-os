@@ -58,7 +58,7 @@
 
 
     # Enable networking
-  networking.networkmanager.enable = true;
+    networking.networkmanager.enable = true;
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
@@ -68,37 +68,22 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
-
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            # TODO replace ryan with your own username
-            home-manager.users.leon = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-          }
-
-
         ];
       };
     };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-  #  homeConfigurations = {
+    homeConfigurations = {
       # FIXME replace with your username@hostname
-   #   "leon@slide-desktop" = home-manager.lib.homeManagerConfiguration {
-    #    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-     #   extraSpecialArgs = {inherit inputs outputs;};
-      #  modules = [
+      "leon@slide-desktop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
           # > Our main home-manager configuration file <
-       #   ./home-manager/home.nix
-     #   ];
-    #  };
-  #  };
+          ./home-manager/home.nix
+        ];
+      };
+    };
   };
 }
